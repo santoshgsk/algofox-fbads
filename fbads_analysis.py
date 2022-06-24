@@ -3,9 +3,12 @@ from datetime import datetime, timedelta
 import pandas as pd
 from fetch_data import get_full_data, increment_date_by_day
 
+ACCESS_TOKEN = None
+AD_ACCOUNT_ID = None
 
-ACCESS_TOKEN = st.text_input("ACCESS TOKEN")
-AD_ACCOUNT_ID = st.text_input("AD_ACCOUNT_ID")
+with st.sidebar():
+    ACCESS_TOKEN = st.text_input("ACCESS TOKEN")
+    AD_ACCOUNT_ID = st.text_input("AD_ACCOUNT_ID")
 
 st.write("now let s see if it is working")
 
