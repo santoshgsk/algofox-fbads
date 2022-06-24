@@ -12,8 +12,13 @@ with st.sidebar:
 
 st.write("now let s see if it is working")
 
+today_date = "-".join([str(dd.year), str(dd.month), str(dd.day)])
+default_start = datetime.strptime(, '%Y-%m-%d') - timedelta(days=7)
+start_date = st.date("start_date", value=default_start)
+end_date = st.date("end_date", value=today_date)
 
 
+st.write(start_date)
 
 # all_days_data = None
 
