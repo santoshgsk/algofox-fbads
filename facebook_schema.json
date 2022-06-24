@@ -1,0 +1,1058 @@
+[
+	{
+		"name": "campaign_id",
+		"type": "STRING",
+		"mode": "REQUIRED"
+	},
+	{
+		"name": "campaign_name",
+		"type": "STRING",
+		"mode": "REQUIRED"
+	},
+	{
+		"name": "date_start",
+		"type": "DATE",
+		"mode": "REQUIRED"
+	},
+	{
+		"name": "date_stop",
+		"type": "DATE",
+		"mode": "REQUIRED"
+	},
+	{
+		"name": "daily_budget",
+		"type": "STRING",
+		"mode": "NULLABLE"
+	},
+	{
+		"name": "objective",
+		"type": "STRING",
+		"mode": "NULLABLE"
+	},
+	{
+		"name": "status",
+		"type": "STRING",
+		"mode": "NULLABLE"
+	},
+	{
+		"name": "bid_strategy",
+		"type": "STRING",
+		"mode": "NULLABLE"
+	},
+	{
+		"name": "buying_type",
+		"type": "STRING",
+		"mode": "NULLABLE"
+	},
+	{
+		"name": "adsets",
+		"type": "RECORD",
+		"mode": "REPEATED",
+		"fields": [
+			{
+				"name": "adset_id",
+				"type": "STRING",
+				"mode": "REQUIRED"
+			},
+			{
+				"name": "adset_name",
+				"type": "STRING",
+				"mode": "REQUIRED"
+			},
+			{
+				"name": "optimization_goal",
+				"type": "STRING",
+				"mode": "NULLABLE"
+			},
+			{
+				"name": "is_dynamic_creative",
+				"type": "STRING",
+				"mode": "NULLABLE"
+			},
+			{
+				"name": "daily_budget",
+				"type": "INTEGER",
+				"mode": "NULLABLE"
+			},
+			{
+				"name": "billing_event",
+				"type": "STRING",
+				"mode": "NULLABLE"
+			},
+			{
+				"name": "age_max",
+				"type": "INTEGER",
+				"mode": "NULLABLE"
+			},
+			{
+				"name": "age_min",
+				"type": "INTEGER",
+				"mode": "NULLABLE"
+			},
+			{
+				"name": "attribution",
+				"type": "RECORD",
+				"mode": "REPEATED",
+				"fields": [
+					{
+						"name": "event_type",
+						"type": "STRING",
+						"mode": "NULLABLE"
+					},
+					{
+						"name": "window_days",
+						"type": "STRING",
+						"mode": "NULLABLE"
+					}
+				]
+			},
+			{
+				"name": "excluded_custom_audiences",
+				"type": "RECORD",
+				"mode": "REPEATED",
+				"fields": [
+					{
+						"name": "name",
+						"type": "STRING",
+						"mode": "NULLABLE"
+					},
+					{
+						"name": "custom_audience_id",
+						"type": "STRING",
+						"mode": "NULLABLE"
+					}
+				]
+			},
+			{
+				"name": "custom_audiences",
+				"type": "RECORD",
+				"mode": "REPEATED",
+				"fields": [
+					{
+						"name": "name",
+						"type": "STRING",
+						"mode": "NULLABLE"
+					},
+					{
+						"name": "custom_audience_id",
+						"type": "STRING",
+						"mode": "NULLABLE"
+					}
+				]
+			},
+			{
+				"name": "exclusions",
+				"type": "RECORD",
+				"mode": "NULLABLE",
+				"fields": [
+					{
+						"name": "interests",
+						"type": "RECORD",
+						"mode": "REPEATED",
+						"fields": [
+							{
+								"name": "name",
+								"type": "STRING",
+								"mode": "REQUIRED"
+							},
+							{
+								"name": "id",
+								"type": "STRING",
+								"mode": "REQUIRED"
+							}
+						]
+					},
+					{
+						"name": "education_majors",
+						"type": "RECORD",
+						"mode": "REPEATED",
+						"fields": [
+							{
+								"name": "name",
+								"type": "STRING",
+								"mode": "REQUIRED"
+							},
+							{
+								"name": "id",
+								"type": "STRING",
+								"mode": "REQUIRED"
+							}
+						]
+					},
+					{
+						"name": "behaviors",
+						"type": "RECORD",
+						"mode": "REPEATED",
+						"fields": [
+							{
+								"name": "name",
+								"type": "STRING",
+								"mode": "REQUIRED"
+							},
+							{
+								"name": "id",
+								"type": "STRING",
+								"mode": "REQUIRED"
+							}
+						]
+					},
+					{
+						"name": "education_schools",
+						"type": "RECORD",
+						"mode": "REPEATED",
+						"fields": [
+							{
+								"name": "name",
+								"type": "STRING",
+								"mode": "REQUIRED"
+							},
+							{
+								"name": "id",
+								"type": "STRING",
+								"mode": "REQUIRED"
+							}
+						]
+					},
+					{
+						"name": "family_statuses",
+						"type": "RECORD",
+						"mode": "REPEATED",
+						"fields": [
+							{
+								"name": "name",
+								"type": "STRING",
+								"mode": "REQUIRED"
+							},
+							{
+								"name": "id",
+								"type": "STRING",
+								"mode": "REQUIRED"
+							}
+						]
+					},
+					{
+						"name": "life_events",
+						"type": "RECORD",
+						"mode": "REPEATED",
+						"fields": [
+							{
+								"name": "name",
+								"type": "STRING",
+								"mode": "REQUIRED"
+							},
+							{
+								"name": "id",
+								"type": "STRING",
+								"mode": "REQUIRED"
+							}
+						]
+					},
+					{
+						"name": "income",
+						"type": "RECORD",
+						"mode": "REPEATED",
+						"fields": [
+							{
+								"name": "name",
+								"type": "STRING",
+								"mode": "REQUIRED"
+							},
+							{
+								"name": "id",
+								"type": "STRING",
+								"mode": "REQUIRED"
+							}
+						]
+					},
+					{
+						"name": "industries",
+						"type": "RECORD",
+						"mode": "REPEATED",
+						"fields": [
+							{
+								"name": "name",
+								"type": "STRING",
+								"mode": "REQUIRED"
+							},
+							{
+								"name": "id",
+								"type": "STRING",
+								"mode": "REQUIRED"
+							}
+						]
+					},
+					{
+						"name": "work_employers",
+						"type": "RECORD",
+						"mode": "REPEATED",
+						"fields": [
+							{
+								"name": "name",
+								"type": "STRING",
+								"mode": "REQUIRED"
+							},
+							{
+								"name": "id",
+								"type": "STRING",
+								"mode": "REQUIRED"
+							}
+						]
+					},
+					{
+						"name": "work_positions",
+						"type": "RECORD",
+						"mode": "REPEATED",
+						"fields": [
+							{
+								"name": "name",
+								"type": "STRING",
+								"mode": "REQUIRED"
+							},
+							{
+								"name": "id",
+								"type": "STRING",
+								"mode": "REQUIRED"
+							}
+						]
+					}
+				]
+			},
+			{
+				"name": "targeting",
+				"type": "RECORD",
+				"mode": "NULLABLE",
+				"fields": [
+					{
+						"name": "interests",
+						"type": "RECORD",
+						"mode": "REPEATED",
+						"fields": [
+							{
+								"name": "name",
+								"type": "STRING",
+								"mode": "REQUIRED"
+							},
+							{
+								"name": "id",
+								"type": "STRING",
+								"mode": "REQUIRED"
+							}
+						]
+					},
+					{
+						"name": "education_majors",
+						"type": "RECORD",
+						"mode": "REPEATED",
+						"fields": [
+							{
+								"name": "name",
+								"type": "STRING",
+								"mode": "REQUIRED"
+							},
+							{
+								"name": "id",
+								"type": "STRING",
+								"mode": "REQUIRED"
+							}
+						]
+					},
+					{
+						"name": "behaviors",
+						"type": "RECORD",
+						"mode": "REPEATED",
+						"fields": [
+							{
+								"name": "name",
+								"type": "STRING",
+								"mode": "REQUIRED"
+							},
+							{
+								"name": "id",
+								"type": "STRING",
+								"mode": "REQUIRED"
+							}
+						]
+					},
+					{
+						"name": "education_schools",
+						"type": "RECORD",
+						"mode": "REPEATED",
+						"fields": [
+							{
+								"name": "name",
+								"type": "STRING",
+								"mode": "REQUIRED"
+							},
+							{
+								"name": "id",
+								"type": "STRING",
+								"mode": "REQUIRED"
+							}
+						]
+					},
+					{
+						"name": "family_statuses",
+						"type": "RECORD",
+						"mode": "REPEATED",
+						"fields": [
+							{
+								"name": "name",
+								"type": "STRING",
+								"mode": "REQUIRED"
+							},
+							{
+								"name": "id",
+								"type": "STRING",
+								"mode": "REQUIRED"
+							}
+						]
+					},
+					{
+						"name": "life_events",
+						"type": "RECORD",
+						"mode": "REPEATED",
+						"fields": [
+							{
+								"name": "name",
+								"type": "STRING",
+								"mode": "REQUIRED"
+							},
+							{
+								"name": "id",
+								"type": "STRING",
+								"mode": "REQUIRED"
+							}
+						]
+					},
+					{
+						"name": "income",
+						"type": "RECORD",
+						"mode": "REPEATED",
+						"fields": [
+							{
+								"name": "name",
+								"type": "STRING",
+								"mode": "REQUIRED"
+							},
+							{
+								"name": "id",
+								"type": "STRING",
+								"mode": "REQUIRED"
+							}
+						]
+					},
+					{
+						"name": "industries",
+						"type": "RECORD",
+						"mode": "REPEATED",
+						"fields": [
+							{
+								"name": "name",
+								"type": "STRING",
+								"mode": "REQUIRED"
+							},
+							{
+								"name": "id",
+								"type": "STRING",
+								"mode": "REQUIRED"
+							}
+						]
+					},
+					{
+						"name": "work_employers",
+						"type": "RECORD",
+						"mode": "REPEATED",
+						"fields": [
+							{
+								"name": "name",
+								"type": "STRING",
+								"mode": "REQUIRED"
+							},
+							{
+								"name": "id",
+								"type": "STRING",
+								"mode": "REQUIRED"
+							}
+						]
+					},
+					{
+						"name": "work_positions",
+						"type": "RECORD",
+						"mode": "REPEATED",
+						"fields": [
+							{
+								"name": "name",
+								"type": "STRING",
+								"mode": "REQUIRED"
+							},
+							{
+								"name": "id",
+								"type": "STRING",
+								"mode": "REQUIRED"
+							}
+						]
+					}
+				]
+			},
+			{
+				"name": "geo_locations",
+				"type": "RECORD",
+				"mode": "NULLABLE",
+				"fields": [
+					{
+						"name": "countries",
+						"type": "STRING",
+						"mode": "REPEATED"
+					},
+					{
+						"name": "cities",
+						"type": "RECORD",
+						"mode": "REPEATED",
+						"fields":[
+							{
+								"name": "country",
+								"type": "STRING",
+								"mode": "NULLABLE"
+							},
+							{
+								"name": "distance_unit",
+								"type": "STRING",
+								"mode": "NULLABLE"
+							},
+							{
+								"name": "key",
+								"type": "STRING",
+								"mode": "NULLABLE"
+							},
+							{
+								"name": "name",
+								"type": "STRING",
+								"mode": "NULLABLE"
+							},
+							{
+								"name": "radius",
+								"type": "INTEGER",
+								"mode": "NULLABLE"
+							},
+							{
+								"name": "region",
+								"type": "STRING",
+								"mode": "NULLABLE"
+							},
+							{
+								"name": "region_id",
+								"type": "STRING",
+								"mode": "NULLABLE"
+							}
+
+						]
+					},
+					{
+						"name": "regions",
+						"type": "RECORD",
+						"mode": "REPEATED",
+						"fields":[
+							{
+								"name": "country",
+								"type": "STRING",
+								"mode": "NULLABLE"
+							},
+							{
+								"name": "key",
+								"type": "STRING",
+								"mode": "NULLABLE"
+							},
+							{
+								"name": "name",
+								"type": "STRING",
+								"mode": "NULLABLE"
+							}
+						]
+
+					},
+					{
+						"name": "custom_locations",
+						"type": "RECORD",
+						"mode": "REPEATED",
+						"fields":[
+							{
+								"name": "name",
+								"type": "STRING",
+								"mode": "NULLABLE"
+							},
+							{
+								"name": "address_string",
+								"type": "STRING",
+								"mode": "NULLABLE"
+							},
+							{
+								"name": "distance_unit",
+								"type": "STRING",
+								"mode": "NULLABLE"
+							},
+							{
+								"name": "latitude",
+								"type": "FLOAT",
+								"mode": "NULLABLE"
+							},
+							{
+								"name": "longitude",
+								"type": "FLOAT",
+								"mode": "NULLABLE"
+							},
+							{
+								"name": "radius",
+								"type": "INTEGER",
+								"mode": "NULLABLE"
+							},
+							{
+								"name": "primary_city_id",
+								"type": "INTEGER",
+								"mode": "NULLABLE"
+							},
+							{
+								"name": "region_id",
+								"type": "INTEGER",
+								"mode": "NULLABLE"
+							},
+							{
+								"name": "country",
+								"type": "STRING",
+								"mode": "NULLABLE"
+							}
+						]
+						
+					},
+					{
+						"name": "location_types",
+						"type": "STRING",
+						"mode": "REPEATED"
+					}
+				]
+				
+			},
+			{
+				"name": "ads",
+				"type": "RECORD",
+				"mode": "REPEATED",
+				"fields":[
+					{
+						"name": "ad_id",
+						"type": "STRING",
+						"mode": "REQUIRED"
+					},
+					{
+						"name": "ad_name",
+						"type": "STRING",
+						"mode": "REQUIRED"
+					},
+					{
+						"name": "preview_shareable_link",
+						"type": "STRING",
+						"mode": "NULLABLE"
+					},
+					{
+						"name": "conversion_domain",
+						"type": "STRING",
+						"mode": "NULLABLE"
+					},
+					{
+						"name": "conversion_rate_ranking",
+						"type": "STRING",
+						"mode": "NULLABLE"
+					},
+					{
+						"name": "quality_ranking",
+						"type": "STRING",
+						"mode": "NULLABLE"
+					},
+					{
+						"name": "engagement_rate_ranking",
+						"type": "STRING",
+						"mode": "NULLABLE"
+					},
+					{
+						"name": "spend",
+						"type": "FLOAT",
+						"mode": "NULLABLE"
+					},
+					{
+						"name": "impressions",
+						"type": "INTEGER",
+						"mode": "NULLABLE"
+					},
+					{
+						"name": "reach",
+						"type": "INTEGER",
+						"mode": "NULLABLE"
+					},
+					{
+						"name": "frequency",
+						"type": "FLOAT",
+						"mode": "NULLABLE"
+					},
+					{
+						"name": "clicks",
+						"type": "INTEGER",
+						"mode": "NULLABLE"
+					},
+					{
+						"name": "cost_per_unique_click",
+						"type": "FLOAT",
+						"mode": "NULLABLE"
+					},
+					{
+						"name": "inline_link_clicks",
+						"type": "INTEGER",
+						"mode": "NULLABLE"
+					},
+					{
+						"name": "cost_per_unique_inline_link_click",
+						"type": "FLOAT",
+						"mode": "NULLABLE"
+					},
+					{
+						"name": "inline_post_engagement",
+						"type": "INTEGER",
+						"mode": "NULLABLE"
+					},
+					{
+						"name": "video_30_sec_watched_actions",
+						"type": "RECORD",
+						"mode": "REPEATED",
+						"fields":[
+							{
+								"name": "action_type",
+								"type": "STRING",
+								"mode": "NULLABLE"
+							},
+							{
+								"name": "value",
+								"type": "STRING",
+								"mode": "NULLABLE"
+							}
+						]
+					},
+					{
+						"name": "video_avg_time_watched_actions",
+						"type": "RECORD",
+						"mode": "REPEATED",
+						"fields":[
+							{
+								"name": "action_type",
+								"type": "STRING",
+								"mode": "NULLABLE"
+							},
+							{
+								"name": "value",
+								"type": "STRING",
+								"mode": "NULLABLE"
+							}
+						]
+					},
+					{
+						"name": "video_p100_watched_actions",
+						"type": "RECORD",
+						"mode": "REPEATED",
+						"fields":[
+							{
+								"name": "action_type",
+								"type": "STRING",
+								"mode": "NULLABLE"
+							},
+							{
+								"name": "value",
+								"type": "STRING",
+								"mode": "NULLABLE"
+							}
+						]
+					},
+					{
+						"name": "video_p25_watched_actions",
+						"type": "RECORD",
+						"mode": "REPEATED",
+						"fields":[
+							{
+								"name": "action_type",
+								"type": "STRING",
+								"mode": "NULLABLE"
+							},
+							{
+								"name": "value",
+								"type": "STRING",
+								"mode": "NULLABLE"
+							}
+						]
+					},
+					{
+						"name": "video_p50_watched_actions",
+						"type": "RECORD",
+						"mode": "REPEATED",
+						"fields":[
+							{
+								"name": "action_type",
+								"type": "STRING",
+								"mode": "NULLABLE"
+							},
+							{
+								"name": "value",
+								"type": "STRING",
+								"mode": "NULLABLE"
+							}
+						]
+					},
+					{
+						"name": "video_p75_watched_actions",
+						"type": "RECORD",
+						"mode": "REPEATED",
+						"fields":[
+							{
+								"name": "action_type",
+								"type": "STRING",
+								"mode": "NULLABLE"
+							},
+							{
+								"name": "value",
+								"type": "STRING",
+								"mode": "NULLABLE"
+							}
+						]
+					},
+					{
+						"name": "video_p95_watched_actions",
+						"type": "RECORD",
+						"mode": "REPEATED",
+						"fields":[
+							{
+								"name": "action_type",
+								"type": "STRING",
+								"mode": "NULLABLE"
+							},
+							{
+								"name": "value",
+								"type": "STRING",
+								"mode": "NULLABLE"
+							}
+						]
+					},
+					{
+						"name": "video_play_actions",
+						"type": "RECORD",
+						"mode": "REPEATED",
+						"fields":[
+							{
+								"name": "action_type",
+								"type": "STRING",
+								"mode": "NULLABLE"
+							},
+							{
+								"name": "value",
+								"type": "STRING",
+								"mode": "NULLABLE"
+							}
+						]
+					},
+					{
+						"name": "outbound_clicks",
+						"type": "RECORD",
+						"mode": "REPEATED",
+						"fields":[
+							{
+								"name": "action_type",
+								"type": "STRING",
+								"mode": "NULLABLE"
+							},
+							{
+								"name": "value",
+								"type": "STRING",
+								"mode": "NULLABLE"
+							}
+						]
+					},
+					{
+						"name": "cost_per_unique_outbound_click",
+						"type": "RECORD",
+						"mode": "REPEATED",
+						"fields":[
+							{
+								"name": "action_type",
+								"type": "STRING",
+								"mode": "NULLABLE"
+							},
+							{
+								"name": "value",
+								"type": "STRING",
+								"mode": "NULLABLE"
+							}
+						]
+					},
+					{
+						"name": "actions",
+						"type": "RECORD",
+						"mode": "REPEATED",
+						"fields":[
+							{
+								"name": "action_type",
+								"type": "STRING",
+								"mode": "NULLABLE"
+							},
+							{
+								"name": "value",
+								"type": "STRING",
+								"mode": "NULLABLE"
+							}
+						]
+					},
+					{
+						"name": "action_values",
+						"type": "RECORD",
+						"mode": "REPEATED",
+						"fields":[
+							{
+								"name": "action_type",
+								"type": "STRING",
+								"mode": "NULLABLE"
+							},
+							{
+								"name": "value",
+								"type": "STRING",
+								"mode": "NULLABLE"
+							}
+						]
+					},
+					{
+						"name": "cost_per_unique_action_type",
+						"type": "RECORD",
+						"mode": "REPEATED",
+						"fields":[
+							{
+								"name": "action_type",
+								"type": "STRING",
+								"mode": "NULLABLE"
+							},
+							{
+								"name": "value",
+								"type": "STRING",
+								"mode": "NULLABLE"
+							}
+						]
+					},
+					{
+						"name": "conversions",
+						"type": "RECORD",
+						"mode": "REPEATED",
+						"fields":[
+							{
+								"name": "action_type",
+								"type": "STRING",
+								"mode": "NULLABLE"
+							},
+							{
+								"name": "value",
+								"type": "STRING",
+								"mode": "NULLABLE"
+							}
+						]
+					},
+					{
+						"name": "purchase_roas",
+						"type": "RECORD",
+						"mode": "REPEATED",
+						"fields":[
+							{
+								"name": "action_type",
+								"type": "STRING",
+								"mode": "NULLABLE"
+							},
+							{
+								"name": "value",
+								"type": "STRING",
+								"mode": "NULLABLE"
+							}
+						]
+					},
+					{
+						"name": "website_purchase_roas",
+						"type": "RECORD",
+						"mode": "REPEATED",
+						"fields":[
+							{
+								"name": "action_type",
+								"type": "STRING",
+								"mode": "NULLABLE"
+							},
+							{
+								"name": "value",
+								"type": "STRING",
+								"mode": "NULLABLE"
+							}
+						]
+					},
+					{
+						"name": "website_ctr",
+						"type": "RECORD",
+						"mode": "REPEATED",
+						"fields":[
+							{
+								"name": "action_type",
+								"type": "STRING",
+								"mode": "NULLABLE"
+							},
+							{
+								"name": "value",
+								"type": "STRING",
+								"mode": "NULLABLE"
+							}
+						]
+					},
+					{
+						"name": "creative_id",
+						"type": "STRING",
+						"mode": "REQUIRED"
+					},
+					{
+						"name": "creative_url",
+						"type": "STRING",
+						"mode": "NULLABLE"
+					},
+					{
+						"name": "object_type",
+						"type": "STRING",
+						"mode": "NULLABLE"
+					},
+					{
+						"name": "primary_text",
+						"type": "STRING",
+						"mode": "NULLABLE"
+					},
+					{
+						"name": "headline",
+						"type": "STRING",
+						"mode": "NULLABLE"
+					},
+					{
+						"name": "description",
+						"type": "STRING",
+						"mode": "NULLABLE"
+					},
+					{
+						"name": "cta",
+						"type": "STRING",
+						"mode": "NULLABLE"
+					},
+					{
+						"name": "link",
+						"type": "STRING",
+						"mode": "NULLABLE"
+					},
+					{
+						"name": "creative_optimization",
+						"type": "STRING",
+						"mode": "NULLABLE"
+					}
+				]
+			}
+		]
+	}
+
+]
