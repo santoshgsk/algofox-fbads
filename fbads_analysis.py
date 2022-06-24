@@ -6,7 +6,7 @@ from fetch_data import get_full_data, increment_date_by_day
 ACCESS_TOKEN = None
 AD_ACCOUNT_ID = None
 
-with st.sidebar():
+with st.sidebar:
     ACCESS_TOKEN = st.text_input("ACCESS TOKEN")
     AD_ACCOUNT_ID = st.text_input("AD_ACCOUNT_ID")
 
