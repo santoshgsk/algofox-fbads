@@ -19,25 +19,31 @@ start_date = st.date_input("start_date", value=default_start)
 end_date = st.date_input("end_date", value=dd)
 
 
-st.write(start_date)
 
-# all_days_data = None
+all_days_data = None
 
-# date_start = '2022-06-16'
-# date_stop = date_start
+date_start = "-".join([str(start_date.year), str(start_date.month), str(start_date.day)])
+date_stop = date_start
 
-# while date_stop != '2022-6-24':
-    
-#     print ("Processing ... ", date_start)
-    
-#     start = datetime.now()
-#     full_data = get_full_data(date_start, date_stop, AD_ACCOUNT_ID, ACCESS_TOKEN)
-#     print (".... 1. Completed data fetching in ", datetime.now()-start)
-    
-#     if all_days_data is None:
-#         all_days_data = full_data
-#     else:
-#         all_days_data = pd.concat([all_days_data, full_data], axis=0)
-#     date_start, date_stop = increment_date_by_day(date_start, date_stop)
+stop_date = "-".join([str(end_date.year), str(end_date.month), str(end_date.day)])
 
-# print (all_days_data)
+
+
+if (AD_ACCOUNT_ID is not None) & (ACCESS_TOKEN is not None): 
+
+    if st.button("Fetch Data"):
+        while date_stop != stop_date:
+            
+            print ("Processing ... ", date_start)
+            
+            start = datetime.now()
+            full_data = get_full_data(date_start, date_stop, AD_ACCOUNT_ID, ACCESS_TOKEN)
+            print (".... 1. Completed data fetching in ", datetime.now()-start)
+            
+            if all_days_data is None:
+                all_days_data = full_data
+            else:
+                all_days_data = pd.concat([all_days_data, full_data], axis=0)
+            date_start, date_stop = increment_date_by_day(date_start, date_stop)
+
+        all_days_data
