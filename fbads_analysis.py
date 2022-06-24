@@ -15,7 +15,7 @@ st.write("now let s see if it is working")
 dd = datetime.now()
 today_date = "-".join([str(dd.year), str(dd.month), str(dd.day)])
 default_start = datetime.strptime(today_date, '%Y-%m-%d') - timedelta(days=7)
-start_date = st.date("start_date", value=default_start)
+start_date = st.date_input("start_date", value=default_start)
 end_date = st.date("end_date", value=today_date)
 
 
