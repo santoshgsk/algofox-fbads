@@ -12,7 +12,7 @@ with st.sidebar:
     AD_ACCOUNT_ID = st.text_input("AD_ACCOUNT_ID")
 
 st.title("Facebook Ad Performance Reporting Tool")
-st.header("Enter ACCESS_TOKEN, AD_ACCOUNT_ID and select Date Range to analyze Ads performance")
+st.subheader("Enter ACCESS_TOKEN, AD_ACCOUNT_ID and select Date Range to analyze Ads performance")
 st.subheader("This tool will help you to take decisions on which ads to pause")
 
 dd = datetime.now()
