@@ -11,7 +11,9 @@ with st.sidebar:
     ACCESS_TOKEN = st.text_input("ACCESS TOKEN")
     AD_ACCOUNT_ID = st.text_input("AD_ACCOUNT_ID")
 
-st.write("now let s see if it is working")
+st.title("Facebook Ad Performance Reporting Tool")
+st.header("Enter ACCESS_TOKEN, AD_ACCOUNT_ID and select Date Range to analyze Ads performance")
+st.subheader("This tool will help you to take decisions on which ads to pause")
 
 dd = datetime.now()
 today_date = "-".join([str(dd.year), str(dd.month), str(dd.day)])
@@ -50,6 +52,7 @@ if (AD_ACCOUNT_ID is not None) & (ACCESS_TOKEN is not None):
         # ad - cpm
     
         ad_cpm = all_days_data[["ad_id", "date_start", "spend", "impressions"]]
+        ad_cpm.index = range(len(ad_cpm))
         ad_cpm["cpm"] = ad_cpm.spend.astype(float)*1000/ad_cpm.impressions.astype(int)
 
         running_ads = ad_cpm[ad_cpm["date_start"]==ad_cpm['date_start'].max()]["ad_id"].values
@@ -72,6 +75,7 @@ if (AD_ACCOUNT_ID is not None) & (ACCESS_TOKEN is not None):
         # ad - ctr
     
         ad_ctr = all_days_data[["ad_id", "date_start", "clicks", "impressions"]]
+        ad_ctr.index = range(len(ad_ctr))
         ad_ctr["ctr"] = ad_ctr.clicks.astype(float)*100/ad_ctr.impressions.astype(int)
 
         running_ads = ad_ctr[ad_ctr["date_start"]==ad_ctr['date_start'].max()]["ad_id"].values
@@ -102,6 +106,7 @@ if (AD_ACCOUNT_ID is not None) & (ACCESS_TOKEN is not None):
         # ad - conversion
     
         ad_conversion = all_days_data[["ad_id", "date_start", "clicks", "leads"]]
+        ad_conversion.index = range(len(ad_conversion))
         ad_conversion["conversion"] = ad_conversion.leads.astype(int)*100/ad_ctr.clicks.astype(int)
 
         running_ads = ad_conversion[ad_conversion["date_start"]==ad_conversion['date_start'].max()]["ad_id"].values
